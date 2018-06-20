@@ -1,4 +1,4 @@
-create database refer;
+CREATE DATABASE IF NOT EXISTS refer;
 use refer;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

@@ -28,7 +28,7 @@ function Pagina(nropagina){
     //indicamos el archivo que realizará el proceso de paginar
     //junto con un valor que representa el nro de pagina
     ajax.open("GET", "paginador.php?pag="+nropagina);
-    divContenido.innerHTML= '<img src="anim.gif">';
+    divContenido.innerHTML= '<img src="loader.gif">';
     ajax.onreadystatechange=function() {
         if (ajax.readyState==4) {
             //mostrar resultados en esta capa
