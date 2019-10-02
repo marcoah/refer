@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="Busqueda de piezas">
+	<meta name="keywords" content="Busqueda de piezas">
+	<meta name="author" content="MHConsultores">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Busqueda</title>
 </head>
 
