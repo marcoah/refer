@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Marco Antonio
- * Date: 7/1/2017
- * Time: 11:15 PM
- */
-?>
-
 <html>
 <head>
 <title>Paginar Resultados</title>
