@@ -6,7 +6,7 @@ La base de datos original es de un dbf muy viejo con el listado de piezas de Ren
 
 La idea es simplemente ir probando técnicas para consulta a una base de datos con PHP y mostrar la información con HTML + CSS muy basico.
 
-# Project Title
+# Instrucciones
 
 One Paragraph of project description goes here
 
@@ -64,7 +64,7 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+## Colaboradores
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
