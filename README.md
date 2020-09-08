@@ -10,6 +10,7 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 * Instalar
 * Usar
+* Disfrutar
 
 ## Empezando
 
@@ -17,7 +18,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+* PHP
+* MySQL
 
 ```
 Give examples
