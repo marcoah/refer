@@ -28,24 +28,10 @@ A step by step series of examples that tell you how to get a development env run
 
 Say what the step will be
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
 ## Software recomendado
 
-* [marcoah](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* MYSQL Workbench
+* VS CODE
 
 ## Contribuir en este repo
 
@@ -66,7 +52,5 @@ See also the list of [contributors](https://github.com/marcoah/refer/contributor
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Agradecimientos
-
-* Hat tip to anyone whose code was used
 
 ## Notas
