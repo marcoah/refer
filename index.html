@@ -39,7 +39,7 @@
                 <a class="flex items-center text-orange-600 text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="#">
                     <svg class="fill-current h-6 inline-block text-orange-600 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M16 2h4v15a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V0h16v2zm0 2v13a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4h-2zM2 2v15a1 1 0 0 0 1 1h11.17a2.98 2.98 0 0 1-.17-1V2H2zm2 8h8v2H4v-2zm0 4h8v2H4v-2zM4 4h8v4H4V4z" />
-                    </svg> Multi Section Form / Scrollspy
+                    </svg> Base de datos piezas Renault
                 </a>
             </div>
 
@@ -60,8 +60,10 @@
 
                         <div id="userMenu" class="bg-white rounded shadow-md mt-2 mr-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
                             <ul class="list-reset">
-                                <li><a href="#" class="px-4 py-2 block hover:bg-gray-400 no-underline hover:no-underline">My account</a></li>
-                                <li><a href="#" class="px-4 py-2 block hover:bg-gray-400 no-underline hover:no-underline">Notifications</a></li>
+                                <li><a href="busqueda.php" class="px-4 py-2 block hover:bg-gray-400 no-underline hover:no-underline">Realizar una busqueda por nombre de pieza</a></li>
+                                <li><a href="tablarefer.php" class="px-4 py-2 block hover:bg-gray-400 no-underline hover:no-underline">Mostrar lista de piezas</a></li>
+                                <li><a href="index2.php">Ver indice viejo</a></li>
+                                <li><a href="datatables.html">Ver datatables</a></li>
                                 <li>
                                     <hr class="border-t mx-2 border-gray-400">
                                 </li>
@@ -76,18 +78,8 @@
 
         </div>
     </nav>
+
     <!--Container-->
-
-
-
-          <h1>Base de datos piezas Renault</h1>
-          <ul>
-              <li><a href="busqueda.php">Realizar una busqueda por nombre de pieza</a></li>
-              <li><a href="tablarefer.php">Mostrar lista de piezas</a></li>
-              <li><a href="index2.php">Ver indice viejo</a></li>
-              <li><a href="datatables.html">Ver datatables</a></li>
-          </ul>
-
     <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
         <div class="w-full lg:w-1/5 px-6 text-xl text-gray-800 leading-normal">
             <p class="text-base font-bold py-2 lg:pb-6 text-gray-700">Menu</p>
@@ -387,9 +379,8 @@ var userMenu = document.getElementById("userButton");
 document.onclick = check;
 
 function check(e){
-  var target = (e && e.target) || (event && event.srcElement);
-
-  //User Menu
+    var target = (e && e.target) || (event && event.srcElement);
+    //User Menu
   if (!checkParent(target, userMenuDiv)) {
 	// click NOT on the menu
 	if (checkParent(target, userMenu)) {
