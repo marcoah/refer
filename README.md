@@ -6,36 +6,29 @@ La base de datos original es de un dbf muy viejo con el listado de piezas de Ren
 
 La idea es simplemente ir probando técnicas para consulta a una base de datos con PHP y mostrar la información con HTML + CSS muy basico.
 
-# Instrucciones rapidas
+## Instrucciones rapidas
 
-* Instalar
-* Crear BD
-* Usar
-
-## Empezando
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Pre-requisitos
-
-* PHP
-* MySQL
+* Hacer el Fork del repositorio 
+* Clonar el repositorio en su disco local
+* Crear BD EL archivo refer.sql que se encuentra en la carpeta data contiene la BD
+* Index.html esta en la carpeta refer. Usar XAMPP en Windows pra poder ejecutar el servidor apache
 
 
-### Instalación
+## Requisitos
 
-A step by step series of examples that tell you how to get a development env running
+* Apache
+* PHP > 7.2
+* MySQL o MariaDB
 
-Say what the step will be
 
 ## Software recomendado
 
-* MYSQL Workbench
-* VS CODE
+* MySQL Workbench
+* Visual Studio Code
 
 ## Contribuir en este repo
 
-Please read [CONTRIBUTING.md](https://github.com/marcoah/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/marcoah/refer/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versionamiento
 
@@ -43,14 +36,10 @@ En este repositorio se usa [SemVer](http://semver.org/) para el versionamiento. 
 
 ## Autores
 
-* **Marco Hernandez** - *Proyecto inicial* - [marcoah](https://github.com/marcoah)
+* **Marco Hernandez** - *Carga inicial* - [marcoah](https://github.com/marcoah)
 
 See also the list of [contributors](https://github.com/marcoah/refer/contributors) who participated in this project.
 
 ## Licencia
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Agradecimientos
-
-## Notas

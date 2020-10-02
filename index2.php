@@ -3,13 +3,13 @@
 <title>Paginar Resultados</title>
 <script type="text/javascript" src="ajax.js"></script>
 <style>
-td{
-    width:200px;
-}
-a{
-    text-decoration:underline;
- cursor:pointer;
-}
+    td{
+        width:200px;
+    }
+    a{
+        text-decoration:underline;
+    cursor:pointer;
+    }
 </style>
 </head>
 <body>
