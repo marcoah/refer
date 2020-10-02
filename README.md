@@ -28,7 +28,7 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 ## Contribuir en este repo
 
-Please read [CONTRIBUTING.md](https://github.com/marcoah/refer/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versionamiento
 
