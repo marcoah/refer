@@ -28,7 +28,7 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 ## Contribuir en este repo
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Por favor leer [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versionamiento
 
@@ -42,4 +42,4 @@ See also the list of [contributors](https://github.com/marcoah/refer/contributor
 
 ## Licencia
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+Este proyecto esta licenciado bajo la licencia MIT - ver la [LICENCIA](LICENSE) file for details
