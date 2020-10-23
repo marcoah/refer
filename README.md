@@ -42,4 +42,4 @@ See also the list of [contributors](https://github.com/marcoah/refer/contributor
 
 ## Licencia
 
-Este proyecto esta licenciado bajo la licencia MIT - ver la [LICENCIA](LICENSE) file for details
+Este proyecto esta licenciado bajo la licencia MIT - ver la [LICENCIA](LICENSE) archivo para detalles.
