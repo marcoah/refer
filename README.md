@@ -19,6 +19,7 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 * Apache
 * PHP > 7.2
 * MySQL o MariaDB
+* TailwindCSS
 
 
 ## Software recomendado
