@@ -1,17 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Marco Antonio
- * Date: 7/1/2017
- * Time: 11:13 PM
- *Configuracion de la conexion a base de datos
-*/
-
 global $conn;
 
 $bd_host = "localhost";
 $bd_usuario = "root";
-$bd_password = "";
+$bd_password = "master";
 $bd_base = "refer";
 
 $conn = new mysqli($bd_host, $bd_usuario, $bd_password, $bd_base);
