@@ -48,13 +48,26 @@ $columns = array(
         }
     )
 );
+
+require('vendor/autoload.php');
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+/* Database config */
+$db_host = 'localhost';
+$db_user = $_ENV['DB_USER'];
+$db_pass = $_ENV['DB_PASSWORD'];
+$db_database = $_ENV['DB_DATABASE']; 
+
+/* End config */
  
 // SQL server connection information
 $sql_details = array(
-    'user' => 'root',
-    'pass' => '',
-    'db'   => 'refer',
-    'host' => 'localhost'
+    'user' => $db_user,
+    'pass' => $db_pass,
+    'db'   => $db_database,
+    'host' => $db_host
 );
  
  

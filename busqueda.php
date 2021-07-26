@@ -26,24 +26,25 @@
 	}
 	$buscar = $_POST['txtNpro'];
 	//$buscar = str_pad($buscar, 10, "0", STR_PAD_LEFT);
+
+	include('conexion.php');	
 	
-	$mysqli = new mysqli('127.0.0.1', 'root', '', 'refer');
-	if ($mysqli->connect_errno) {
+	if ($conn->connect_errno) {
 		echo "Lo sentimos, este sitio web está experimentando problemas.";
 		echo "Error: Fallo al conectarse a MySQL debido a: \n";
-		echo "Errno: " . $mysqli->connect_errno . "\n";
-		echo "Error: " . $mysqli->connect_error . "\n";
+		echo "Errno: " . $conn->connect_errno . "\n";
+		echo "Error: " . $conn->connect_error . "\n";
 		exit;
 	}
 	
 	$sql="SELECT NPRO, DPRO, STOC, BPNC FROM REFER WHERE DPRO LIKE '%".$buscar."%' ORDER BY DPRO";
 	
-	if (!$resultado = $mysqli->query($sql)) {
+	if (!$resultado = $conn->query($sql)) {
 		echo "Lo sentimos, este sitio web está experimentando problemas.";
 		echo "Error: La ejecución de la consulta falló debido a: \n";
 		echo "Query: " . $sql . "\n";
-		echo "Errno: " . $mysqli->errno . "\n";
-		echo "Error: " . $mysqli->error . "\n";
+		echo "Errno: " . $conn->errno . "\n";
+		echo "Error: " . $conn->error . "\n";
 		exit;
 	}
 	
@@ -76,7 +77,7 @@
 	echo "</ul>\n";
 	
 	$resultado->free();
-	$mysqli->close();
+	$conn->close();
 	
 	?>
 	</p>

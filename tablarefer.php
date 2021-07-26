@@ -15,22 +15,23 @@
 </tr>
 
 <?php
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'refer');
-if ($mysqli->connect_errno) {
+include('conexion.php');
+
+if ($conn->connect_errno) {
     echo "Lo sentimos, este sitio web está experimentando problemas.";
     echo "Error: Fallo al conectarse a MySQL debido a: \n";
-    echo "Errno: " . $mysqli->connect_errno . "\n";
-    echo "Error: " . $mysqli->connect_error . "\n";
+    echo "Errno: " . $conn->connect_errno . "\n";
+    echo "Error: " . $conn->connect_error . "\n";
     exit;
 }
 
 $sql = "SELECT refer.NPRO, refer.DPRO, refer.STOC, refer.BPNC FROM refer WHERE refer.STOC > 0 ";
-if (!$resultado = $mysqli->query($sql)) {
+if (!$resultado = $conn->query($sql)) {
     echo "Lo sentimos, este sitio web está experimentando problemas.";
     echo "Error: La ejecución de la consulta falló debido a: \n";
     echo "Query: " . $sql . "\n";
-    echo "Errno: " . $mysqli->errno . "\n";
-    echo "Error: " . $mysqli->error . "\n";
+    echo "Errno: " . $conn->errno . "\n";
+    echo "Error: " . $conn->error . "\n";
     exit;
 }
 if ($resultado->num_rows === 0) {
@@ -51,7 +52,7 @@ echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Número: " . $numero . "<
 echo "</ul>\n";
 
 $resultado->free();
-$mysqli->close();
+$conn->close();
 ?>
 
 </table>

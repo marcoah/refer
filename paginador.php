@@ -67,5 +67,15 @@ if (!$result) {
     echo "<strong>Pagina ".$PagAct."/".$PagUlt."</strong>";
     if($PagAct<$PagUlt)  echo " <a onclick=\"Pagina('$PagSig')\">Siguiente</a> ";
     echo "<a onclick=\"Pagina('$PagUlt')\">Ultimo</a>";
+
+    echo "<nav aria-label='Page navigation example'>";
+    echo "<ul class='pagination'>";
+    echo "<li class='page-item'><a class='page-link' href='#'>Previous</a></li>";
+    echo "<li class='page-item'><a class='page-link' href='#'>1</a></li>";
+    echo "<li class='page-item'><a class='page-link' href='#'>2</a></li>";
+    echo "<li class='page-item'><a class='page-link' href='#'>3</a></li>";
+    echo "<li class='page-item'><a class='page-link' href='#'>Next</a></li>";
+    echo "</ul>";
+    echo "</nav>";
 }
 
