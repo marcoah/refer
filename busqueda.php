@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Busqueda de piezas">
-	<meta name="keywords" content="Busqueda de piezas">
-	<meta name="author" content="MHConsultores">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Marco Hernandez">
+
 	<title>Busqueda</title>
+
+	<!-- Bootstrap core CSS -->    
+	<link href="node_modules\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-	<p>Busqueda pieza</p>
-	<form id="form1" name="form1" method="post" action="">
-		<label for="txtNpro">Numero de Pieza</label>
-		<input name="txtNpro" type="text" id="txtNpro" maxlength="10">
-		<input type="submit" name="buscar" id="buscar" value="Enviar">
-	</form>
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<h1>Busqueda pieza</h1>
+				<form id="form1" name="form1" method="post" action="">
+					<label for="txtNpro">Numero de Pieza</label>
+					<input name="txtNpro" type="text" id="txtNpro" maxlength="10">
+					<input type="submit" name="buscar" id="buscar" value="Enviar">
+				</form>
+			</div>
+		</div>
+	</main>
+
 	
 	<p>
 	<?php
@@ -52,15 +63,16 @@
 		echo "Lo sentimos. No se pudo encontrar una coincidencia para el ID. Inténtelo de nuevo.";
 		exit;
 	}
+	?>
 	
-	echo "<ul>\n";
-	echo "<hr>";
-	echo "<table border='1' cellspacing=1 cellpadding=2 style='font-size: 8pt'><tr>";
-	echo "<td><b>Código</b></font></td>
+	<table border='1' cellspacing=1 cellpadding=2 style='font-size: 8pt'><tr>";
+	<td><b>Código</b></font></td>
 		<td><b>Descripción</b></font></td>
 		<td><b>Cantidad</b></font></td>
-		<td><b>Precio</b></font></td>";
-	echo "</tr>";
+		<td><b>Precio</b></font></td>
+	</tr>
+
+	<?php
 	
 	while ($row = $resultado->fetch_assoc()) {
 		echo "<tr> \n";
@@ -70,17 +82,18 @@
 		echo "<td>".$row["BPNC"]."</td> \n";
 		echo "</tr> \n";
 	}
+	?>
 	
-	echo "</table> \n";
+	</table>
+
+	<?php
 	$numero = $resultado->num_rows;
-	echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Número: " . $numero . "</b></font></td></tr>";
-	echo "</ul>\n";
+	echo "<p>Número: " . $numero . "</p>";
 	
 	$resultado->free();
 	$conn->close();
 	
 	?>
-	</p>
-	<p>&nbsp;</p>
+
 </body>
 </html>

@@ -5,7 +5,7 @@ include('conexion.php');
 //Si se ha pulsado el botón de buscar
 if (isset($_POST['search'])) {
     //Recogemos las claves enviadas
-    $buscar = $_POST['keywords'];
+    $buscar = $_POST['search'];
 
     $sql = "SELECT NPRO, DPRO, STOC, BPNC FROM REFER WHERE DPRO LIKE '%".$buscar."%' ORDER BY DPRO";
 
@@ -22,6 +22,10 @@ if (isset($_POST['search'])) {
         echo "Lo sentimos. No se pudo encontrar una coincidencia para el ID. Inténtelo de nuevo.";
         exit;
     }
+
+    $numero = $resultado->num_rows;
+
+    echo "<h2>Resultados: ". $numero . " registros</h2>";
   
     echo "<ul>\n";
   
@@ -42,8 +46,7 @@ if (isset($_POST['search'])) {
             echo "</tr> \n";
   
     }
-    echo "</table> \n";
-    $numero = $resultado->num_rows;
+    echo "</table> \n";    
     echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Número: " . $numero . "</b></font></td></tr>";
     echo "</ul>\n";
   
