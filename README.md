@@ -16,10 +16,10 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 ## Requisitos
 
-* Apache
-* PHP > 7.2
-* MySQL o MariaDB
-* TailwindCSS
+* Requisito 1
+* Requisito 2
+* Requisito 3
+* Requisito 4
 
 
 ## Software recomendado
