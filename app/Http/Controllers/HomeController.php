@@ -24,18 +24,28 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('escritorio.principal');
+    }
+
+    public function settings(Request $request)
+    {
+        return view('escritorio.settings');
+    }
+
+    public function profile()
+    {
+        return view('escritorio.profile');
     }
 
     public function search($search){
         $search = urldecode($search);
 
-        $razonsocial = Pieza::where('cliente_razon_social','LIKE','%'.$search.'%');
-        $correo1 = Pieza::where('cliente_email1','LIKE','%'.$search.'%');
+        $numero = Pieza::where('NPRO','LIKE','%'.$search.'%');
+        $descripcion = Pieza::where('DPRO','LIKE','%'.$search.'%');
 
-        $resultado = Pieza::where('cliente_email2', 'LIKE', '%'.$search.'%')
-            ->union($razonsocial)
-            ->union($correo1)
+        $resultado = Pieza::where('ZDOC', 'LIKE', '%'.$search.'%')
+            ->union($numero)
+            ->union($descripcion)
             ->paginate(10);
 
         if (count($resultado) == 0){
