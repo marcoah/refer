@@ -1,0 +1,11 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/popper.js": "/js/popper.js",
+    "/css/app.css": "/css/app.css",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/jquery.slim.min.js": "/js/jquery.slim.min.js",
+    "/js/jquery.easing.min.js": "/js/jquery.easing.min.js",
+    "/js/jquery.dataTables.min.js": "/js/jquery.dataTables.min.js",
+    "/css/jquery.dataTables.min.css": "/css/jquery.dataTables.min.css",
+    "/css/dataTables.bootstrap4.min.css": "/css/dataTables.bootstrap4.min.css"
+}
