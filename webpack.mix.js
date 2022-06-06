@@ -4,12 +4,6 @@ mix.setResourceRoot('../');
 
 mix.sourceMaps()
 
-mix.webpackConfig({
-    stats: {
-        children: true,
-    },
-});
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
