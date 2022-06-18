@@ -26,12 +26,18 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
+        "@ttskch/select2-bootstrap4-theme": "^1.5.2",
         "autoprefixer": "10.4.5",
-        "chart.js": "^3.7.1",
+        "chart.js": "^3.8.0",
         "datatables.net": "^1.11.5",
-        "datatables.net-bs4": "^1.12.1",
+        "datatables.net-bs4": "^1.11.5",
         "datatables.net-buttons-bs4": "^2.2.3",
         "datatables.net-dt": "^1.11.5",
-        "jquery.easing": "^1.4.1"
+        "datatables.net-responsive": "^2.3.0",
+        "datatables.net-responsive-bs4": "^2.3.0",
+        "icheck-bootstrap": "^3.0.1",
+        "jquery.easing": "^1.4.1",
+        "select2": "^4.1.0-rc.0",
+        "sweetalert2": "^11.4.8"
     }
 }

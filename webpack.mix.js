@@ -20,8 +20,6 @@ mix.js('resources/js/app.js', 'public/js').vue()
 
 mix.js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
 
-mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'public/js/bootstrap.bundle.min.js');
-
 mix.copy('resources/js/sb-admin/sb-admin-2.min.js', 'public/js/sb-admin-2.min.js');
 mix.copy('resources/js/sb-admin/demo/chart-area-demo.js', 'public/js/demo/chart-area-demo.js');
 mix.copy('resources/js/sb-admin/demo/chart-pie-demo.js', 'public/js/demo/chart-pie-demo.js');
@@ -29,10 +27,40 @@ mix.copy('resources/js/sb-admin/demo/chart-pie-demo.js', 'public/js/demo/chart-p
 mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js');
 mix.copy('node_modules/jquery/dist/jquery.slim.min.js', 'public/js/jquery.slim.min.js');
 mix.copy('node_modules/jquery.easing/jquery.easing.min.js', 'public/js/jquery.easing.min.js');
+mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'public/js/bootstrap.bundle.min.js');
 
+//para graficos
 mix.copy('node_modules/chart.js/dist/chart.min.js', 'public/js/chart.min.js');
+
+//Para icheck
+mix.copy('node_modules/icheck-bootstrap/icheck-bootstrap.min.css', 'public/css/icheck-bootstrap.min.css');
+
+//Para TinyMCE
+mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
+
+//para Sweetalert2
+mix.copy('node_modules/sweetalert2/dist/sweetalert2.all.min.js', 'public/js/sweetalert2.all.min.js');
+mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.css', 'public/css/sweetalert2.min.css');
+mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.js', 'public/js/sweetalert2.min.js');
 
 //Para Datatables
 mix.copy('node_modules/datatables.net/js/jquery.dataTables.min.js', 'public/js/jquery.dataTables.min.js');
 mix.copy('node_modules/datatables.net-dt/css/jquery.dataTables.min.css', 'public/css/jquery.dataTables.min.css');
+mix.copy('node_modules/datatables.net-dt/js/dataTables.dataTables.min.js', 'public/js/dataTables.dataTables.min.js');
 mix.copy('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css', 'public/css/dataTables.bootstrap4.min.css');
+mix.copy('node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js', 'public/js/dataTables.bootstrap4.min.js');
+mix.copy('node_modules/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css', 'public/css/buttons.bootstrap4.min.css');
+mix.copy('node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js', 'public/js/buttons.bootstrap4.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.colVis.min.js', 'public/js/buttons.colVis.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.flash.min.js', 'public/js/buttons.flash.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.html5.min.js', 'public/js/buttons.html5.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.print.min.js', 'public/js/buttons.print.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/dataTables.buttons.min.js', 'public/js/dataTables.buttons.min.js');
+mix.copy('node_modules/datatables.net-responsive/js/dataTables.responsive.min.js', 'public/js/dataTables.responsive.min.js');
+mix.copy('node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css', 'public/css/responsive.bootstrap4.min.css');
+mix.copy('node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js', 'public/js/responsive.bootstrap4.min.js');
+
+//Para Select2
+mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/js/select2.min.js');
+mix.copy('node_modules/select2/dist/css/select2.min.css', 'public/css/select2.min.css');
+mix.copy('node_modules/@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css', 'public/css/select2-bootstrap4.min.css');
