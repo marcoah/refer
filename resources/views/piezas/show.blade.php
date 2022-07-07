@@ -13,107 +13,174 @@
             </div>
         </div>
 
-        <!-- Content Row -->
-        <div class="row"></div>
-
-        <!-- Content Row -->
         <div class="row">
-            <div class="col-lg-12 mb-4">
-                <div class="jumbotron">
-                    <div class="media">
-                        <div class="media-body">
-                            <h1 class="display-4">{{$pieza->DPRO}}</h1>
-                            <p class="lead">{{$pieza->NPRO}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <hr class="my-4">
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <p>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapsePersonales" role="button" aria-expanded="false" aria-controls="collapsePersonales">
-                                Datos Contacto
-                            </a>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseNegocio" role="button" aria-expanded="false" aria-controls="collapseNegocio">
-                                Datos Negocio
-                            </a>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseDocumentos" role="button" aria-expanded="false" aria-controls="collapseDocumentos">
-                                Documentos
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="collapse" id="collapseDocumentos">
-                    <div class="card card-body">
-                        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card mb-4">
+                    <div class="card-header">Pieza Basicos</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="NPRO" class="col-sm-4 col-form-label">NPRO</label>
                             <div class="col-md-8">
-                                <strong>Documentos</strong>
+                                <input type="text" class="form-control" id="NPRO" name="NPRO" value="{{$pieza->NPRO}}" required>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Tipo</th>
-                                                <th scope="col">Total</th>
-                                                <th scope="col">Estado documento</th>
-                                                <th scope="col">Fecha</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                        <div class="form-group row">
+                            <label for="DPRO" class="col-sm-4 col-form-label">DPRO</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="DPRO" name="DPRO" value="{{$pieza->DPRO}}" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="CPRO" class="col-sm-4 col-form-label">CPRO</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="CPRO" name="CPRO" value="{{ $pieza->CPRO }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="REEM" class="col-sm-4 col-form-label">REEM</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="REEM" name="REEM" value="{{ $pieza->REEM }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                <div class="card mb-4">
+                    <div class="card-header">Datos Vehiculo</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="TVEH" class="col-sm-4 col-form-label">TVEH</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="TVEH" name="TVEH" value="{{ $pieza->TVEH }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="ZDOC" class="col-sm-4 col-form-label">ZDOC</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="ZDOC" name="ZDOC" value="{{ $pieza->ZDOC }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="CORT" class="col-sm-4 col-form-label">CORT</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="CORT" name="CORT" value="{{ $pieza->CORT }}">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="collapse" id="collapsePersonales">
-                    <div class="card card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <strong>Correo principal: </strong>{{ $pieza->NPRO }}
+
+                <div class="card mb-4">
+                    <div class="card-header">Inventario</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="UBIC" class="col-sm-4 col-form-label">UBIC</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="UBIC" name="UBIC" value="{{ $pieza->UBIC }}">
                             </div>
-                            <div class="col-md-4"></div>
                         </div>
-                    </div>
-                    <div class="card card-body">
-                        <div class="form-row">
-                            <div class="col-md-12">
-                                <strong>Direccion: </strong>
+                        <div class="form-group row">
+                            <label for="STOC" class="col-sm-4 col-form-label">STOC</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="STOC" name="STOC" value="{{ $pieza->STOC }}">
                             </div>
-                            <div class="col-md-12">
-                                <strong>Direccion: </strong>
+                        </div>
+                        <div class="form-group row">
+                            <label for="PCUR" class="col-sm-4 col-form-label">PCUR</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="PCUR" name="PCUR" value="{{ $pieza->PCUR }}">
                             </div>
-                            <div class="col-md-4">
-                                <strong>Celular: </strong>
+                        </div>
+                        <div class="form-group row">
+                            <label for="PEND" class="col-sm-4 col-form-label">PEND</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="PEND" name="PEND" value="{{ $pieza->PEND }}">
                             </div>
-                            <div class="col-md-4">
-                                <strong>Teléfono Primario: </strong>
-                            </div>
-                            <div class="col-md-4">
-                                <strong>Teléfono Secundario: </strong>
+                        </div>
+                        <div class="form-group row">
+                            <label for="DIFE" class="col-sm-4 col-form-label">DIFE</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="DIFE" name="DIFE" value="{{$pieza->DIFE}}">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="collapse" id="collapseNegocio">
-                    <div class="card card-body">
-                        <div class="form-row">
-                            <div class="col-md-12">
-                                <strong>Direccion: </strong>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card mb-4">
+                    <div class="card-header">###</div>
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="FUEN" class="col-sm-4 col-form-label">FUEN</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="FUEN" name="FUEN" value="{{$pieza->FUEN}}">
                             </div>
-                            <div class="col-md-3">
-                                <strong>Teléfono Negocios: </strong>
+                        </div>
+                        <div class="form-group row">
+                            <label for="FUSA" class="col-sm-4 col-form-label">FUSA</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="FUSA" name="FUSA" value="{{ $pieza->FUSA }}">
                             </div>
-                            <div class="col-md-4">
-                                <strong>Correo negocios: </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Precios</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="BPCL" class="col-sm-4 col-form-label">BPCL</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="BPCL" name="BPCL" value="{{ $pieza->BPCL }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="PDUM" class="col-sm-4 col-form-label">PDUM</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="PDUM" name="PDUM" value="{{ $pieza->PDUM }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="PDUA" class="col-sm-4 col-form-label">PDUA</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="PDUA" name="PDUA" value="{{ $pieza->PDUA }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="BPNC" class="col-sm-4 col-form-label">BPNC</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="BPNC" name="BPNC" value="{{ $pieza->BPNC }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Familia</div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="FAM1" class="col-sm-4 col-form-label">FAM1</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="FAM1" name="FAM1" value="{{ $pieza->FAM1 }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="FAMI" class="col-sm-4 col-form-label">FAMI</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="FAMI" name="FAMI" value="{{ $pieza->FAMI }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="NPRV" class="col-sm-4 col-form-label">NPRV</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="NPRV" name="NPRV" value="{{ $pieza->NPRV }}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="CADU" class="col-sm-4 col-form-label">CADU</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="CADU" name="CADU" value="{{ $pieza->CADU }}">
                             </div>
                         </div>
                     </div>

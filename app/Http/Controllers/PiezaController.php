@@ -27,7 +27,7 @@ class PiezaController extends Controller
 
         return Datatables::of($piezas)
             ->addColumn('action', function ($pieza) {
-                return '<a class="btn btn-primary btn-sm" href="'.route('piezas.edit',$pieza->id).'" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
+                return '<a class="btn btn-success btn-sm" href="'.route('piezas.edit',$pieza->id).'" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
                 <a class="btn btn-primary btn-sm" href="'.route('piezas.show',$pieza->id).'" data-toggle="tooltip" data-placement="top" title="Mostrar"><i class="fas fa-eye"></i></a>';
             })
             ->editColumn('id', '{{$id}}')
@@ -41,7 +41,7 @@ class PiezaController extends Controller
      */
     public function create()
     {
-        //
+        return view('piezas.create');
     }
 
     /**
@@ -52,7 +52,14 @@ class PiezaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'NPRO'=>'required',
+            'DPRO'=>'required'
+        ]);
+
+        Pieza::create($request->all());
+
+        return redirect()->route('piezas.index')->with('success','pieza creado con éxito.');
     }
 
     /**
@@ -86,7 +93,13 @@ class PiezaController extends Controller
      */
     public function update(Request $request, Pieza $pieza)
     {
-        //
+        $request->validate([
+            'NPRO'=>'required',
+            'DPRO'=>'required'
+        ]);
+
+        $pieza->update($request->all());
+        return redirect()->route('piezas.index')->with('success','pieza actualizado correctamente.');
     }
 
     /**
@@ -97,6 +110,7 @@ class PiezaController extends Controller
      */
     public function destroy(Pieza $pieza)
     {
-        //
+        $pieza->delete();
+        return redirect()->route('piezas.index')->with('success','pieza eliminado correctamente.');
     }
 }

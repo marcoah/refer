@@ -25,6 +25,9 @@ Auth::routes(['verify' => false, 'register' => false ]);
 Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function	() {
 
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile', 'HomeController@profile')->name('profile');
+    Route::get('/settings', 'HomeController@settings')->name('settings');
+    Route::post('profile/photo', 'HomeController@updatePhoto');
     Route::get("home/search/{search}", "HomeController@search");
     Route::get('home/searchredirect', function(Request $request){
         $search = $request->input("search");

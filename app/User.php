@@ -38,4 +38,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAvatarUrl()
+    {
+        if ($this->photo_extension)
+            return asset('img/usuarios/'.$this->id.'.'.$this->photo_extension);
+
+        return asset('img/usuarios/undraw_profile.svg');
+    }
 }
