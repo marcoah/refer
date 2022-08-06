@@ -26,6 +26,7 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 * MySQL Workbench
 * Visual Studio Code
+* 
 
 ## Contribuir en este repo
 
@@ -35,7 +36,7 @@ Por favor leer [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of con
 
 En este repositorio se usa [SemVer](http://semver.org/) para el versionamiento. For the versions available, see the [tags on this repository](https://github.com/marcoah/refer/tags). 
 
-## Autores
+## Autor
 
 * **Marco Hernandez** - *Carga inicial* - [marcoah](https://github.com/marcoah)
 
