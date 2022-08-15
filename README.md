@@ -16,10 +16,8 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 ## Requisitos
 
-* Requisito 1
-* Requisito 2
-* Requisito 3
-* Requisito 4
+* PHP
+* MySQL
 
 
 ## Software recomendado
