@@ -57,10 +57,8 @@
                 <div id="collapseVentas" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Crear Cotización</a>
-                        <a class="collapse-item" href="#">Crear Factura</a>
-                        <a class="collapse-item" href="#">Reportar Pago de Factura</a>
-                        <a class="collapse-item" href="#">Listado de Facturas</a>
+                        <a class="collapse-item" href="#">Nueva Entrada</a>
+                        <a class="collapse-item" href="#">Nueva Salida</a>
                     </div>
                 </div>
             </li>

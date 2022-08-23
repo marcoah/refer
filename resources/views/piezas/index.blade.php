@@ -34,6 +34,7 @@
                     <th>ID</th>
                     <th>NPRO</th>
                     <th>DPRO</th>
+                    <th>STOC</th>
                     <th>UBIC</th>
                     <th>BPNC</th>
                     <th></th>
@@ -58,6 +59,7 @@ $(function() {
             { data: 'id', name: 'id' },
             { data: 'NPRO', name: 'NPRO' },
             { data: 'DPRO', name: 'DPRO' },
+            { data: 'STOC', name: 'STOC' },
             { data: 'UBIC', name: 'UBIC' },
             { data: 'BPNC', name: 'BPNC' },
             { data: 'action', name: 'action', orderable: false, searchable: false }
