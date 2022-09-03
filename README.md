@@ -16,8 +16,9 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 ## Requisitos
 
-* PHP
+* PHP 7.4
 * MySQL
+* Composer, Node
 
 
 ## Software recomendado
