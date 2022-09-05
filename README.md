@@ -15,32 +15,25 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 
 
 ## Requisitos
-
 * PHP 7.4
 * MySQL
 * Composer, Node
 
 
 ## Software recomendado
-
 * MySQL Workbench
 * Visual Studio Code
-* 
 
 ## Contribuir en este repo
-
 Por favor leer [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versionamiento
-
 En este repositorio se usa [SemVer](http://semver.org/) para el versionamiento. For the versions available, see the [tags on this repository](https://github.com/marcoah/refer/tags). 
 
 ## Autor
-
 * **Marco Hernandez** - *Carga inicial* - [marcoah](https://github.com/marcoah)
 
 See also the list of [contributors](https://github.com/marcoah/refer/contributors) who participated in this project.
 
 ## Licencia
-
 Este proyecto esta licenciado bajo la licencia MIT - ver la [LICENCIA](LICENSE) archivo para detalles.
