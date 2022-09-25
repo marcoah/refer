@@ -44,21 +44,21 @@ mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.css', 'public/css/sweeta
 mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.js', 'public/js/sweetalert2.min.js');
 
 //Para Datatables
-mix.copy('node_modules/datatables.net/js/jquery.dataTables.min.js', 'public/js/jquery.dataTables.min.js');
-mix.copy('node_modules/datatables.net-dt/css/jquery.dataTables.min.css', 'public/css/jquery.dataTables.min.css');
-mix.copy('node_modules/datatables.net-dt/js/dataTables.dataTables.min.js', 'public/js/dataTables.dataTables.min.js');
-mix.copy('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css', 'public/css/dataTables.bootstrap4.min.css');
-mix.copy('node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js', 'public/js/dataTables.bootstrap4.min.js');
-mix.copy('node_modules/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css', 'public/css/buttons.bootstrap4.min.css');
-mix.copy('node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js', 'public/js/buttons.bootstrap4.min.js');
-mix.copy('node_modules/datatables.net-buttons/js/buttons.colVis.min.js', 'public/js/buttons.colVis.min.js');
-mix.copy('node_modules/datatables.net-buttons/js/buttons.flash.min.js', 'public/js/buttons.flash.min.js');
-mix.copy('node_modules/datatables.net-buttons/js/buttons.html5.min.js', 'public/js/buttons.html5.min.js');
-mix.copy('node_modules/datatables.net-buttons/js/buttons.print.min.js', 'public/js/buttons.print.min.js');
-mix.copy('node_modules/datatables.net-buttons/js/dataTables.buttons.min.js', 'public/js/dataTables.buttons.min.js');
-mix.copy('node_modules/datatables.net-responsive/js/dataTables.responsive.min.js', 'public/js/dataTables.responsive.min.js');
-mix.copy('node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css', 'public/css/responsive.bootstrap4.min.css');
-mix.copy('node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js', 'public/js/responsive.bootstrap4.min.js');
+mix.copy('node_modules/datatables.net/js/jquery.dataTables.min.js', 'public/js/datatables/jquery.dataTables.min.js');
+mix.copy('node_modules/datatables.net-dt/css/jquery.dataTables.min.css', 'public/css/datatables/jquery.dataTables.min.css');
+mix.copy('node_modules/datatables.net-dt/js/dataTables.dataTables.min.js', 'public/js/datatables/dataTables.dataTables.min.js');
+mix.copy('node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css', 'public/css/datatables/dataTables.bootstrap4.min.css');
+mix.copy('node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js', 'public/js/datatables/dataTables.bootstrap4.min.js');
+mix.copy('node_modules/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css', 'public/css/datatables/buttons.bootstrap4.min.css');
+mix.copy('node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js', 'public/js/datatables/buttons.bootstrap4.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.colVis.min.js', 'public/js/datatables/buttons.colVis.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.flash.min.js', 'public/js/datatables/buttons.flash.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.html5.min.js', 'public/js/datatables/buttons.html5.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/buttons.print.min.js', 'public/js/datatables/buttons.print.min.js');
+mix.copy('node_modules/datatables.net-buttons/js/dataTables.buttons.min.js', 'public/js/datatables/dataTables.buttons.min.js');
+mix.copy('node_modules/datatables.net-responsive/js/dataTables.responsive.min.js', 'public/js/datatables/dataTables.responsive.min.js');
+mix.copy('node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css', 'public/css/datatables/responsive.bootstrap4.min.css');
+mix.copy('node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js', 'public/js/datatables/responsive.bootstrap4.min.js');
 
 //Para Select2
 mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/js/select2.min.js');
