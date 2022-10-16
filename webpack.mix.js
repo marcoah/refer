@@ -32,16 +32,8 @@ mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'public/js/bo
 //para graficos
 mix.copy('node_modules/chart.js/dist/chart.min.js', 'public/js/chart.min.js');
 
-//Para icheck
-mix.copy('node_modules/icheck-bootstrap/icheck-bootstrap.min.css', 'public/css/icheck-bootstrap.min.css');
-
 //Para TinyMCE
 mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
-
-//para Sweetalert2
-mix.copy('node_modules/sweetalert2/dist/sweetalert2.all.min.js', 'public/js/sweetalert2.all.min.js');
-mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.css', 'public/css/sweetalert2.min.css');
-mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.js', 'public/js/sweetalert2.min.js');
 
 //Para Datatables
 mix.copy('node_modules/datatables.net/js/jquery.dataTables.min.js', 'public/js/datatables/jquery.dataTables.min.js');
@@ -60,7 +52,15 @@ mix.copy('node_modules/datatables.net-responsive/js/dataTables.responsive.min.js
 mix.copy('node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css', 'public/css/datatables/responsive.bootstrap4.min.css');
 mix.copy('node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js', 'public/js/datatables/responsive.bootstrap4.min.js');
 
+//Para icheck
+mix.copy('node_modules/icheck-bootstrap/icheck-bootstrap.min.css', 'public/css/icheck/icheck-bootstrap.min.css');
+
+//para Sweetalert2
+mix.copy('node_modules/sweetalert2/dist/sweetalert2.all.min.js', 'public/js/sweetalert2/sweetalert2.all.min.js');
+mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.css', 'public/css/sweetalert2/sweetalert2.min.css');
+mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.js', 'public/js/sweetalert2/sweetalert2.min.js');
+
 //Para Select2
-mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/js/select2.min.js');
-mix.copy('node_modules/select2/dist/css/select2.min.css', 'public/css/select2.min.css');
-mix.copy('node_modules/@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css', 'public/css/select2-bootstrap4.min.css');
+mix.copy('node_modules/select2/dist/js/select2.min.js', 'public/js/select2/select2.min.js');
+mix.copy('node_modules/select2/dist/css/select2.min.css', 'public/css/select2/select2.min.css');
+mix.copy('node_modules/@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css', 'public/css/select2/select2-bootstrap4.min.css');
