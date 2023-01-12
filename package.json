@@ -36,12 +36,10 @@
         "datatables.net-responsive": "^2.3.0",
         "datatables.net-responsive-bs4": "^2.3.0",
         "fullcalendar": "^5.11.0",
-        "icheck-bootstrap": "^3.0.1",
         "jquery.easing": "^1.4.1",
         "jszip": "^3.10.0",
         "leaflet": "^1.8.0",
         "pdfmake": "^0.2.5",
-        "select2": "^4.1.0-rc.0",
-        "sweetalert2": "^11.4.8"
+        "select2": "^4.1.0-rc.0"
     }
 }
