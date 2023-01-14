@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PiezaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +22,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['verify' => false, 'register' => false ]);
+Auth::routes();
+
+
 
 Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function	() {
 
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/profile', 'HomeController@profile')->name('profile');
-    Route::get('/settings', 'HomeController@settings')->name('settings');
-    Route::post('profile/photo', 'HomeController@updatePhoto');
-    Route::get("home/search/{search}", "HomeController@search");
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+    Route::get('/settings', [HomeController::class, 'settings'])->name('settings');
+    Route::post('profile/photo', [HomeController::class, 'updatePhoto']);
+
+    Route::get('home/search/{search}', [HomeController::class, 'search']);
     Route::get('home/searchredirect', function(Request $request){
         $search = $request->input("search");
         if (empty($search)) return redirect()->back();
@@ -37,7 +42,7 @@ Route::group(['middleware' => 'auth', 'middleware' => 'verified'], function	() {
         return redirect($route);
     });
 
-    Route::resource('piezas', 'PiezaController');
-    Route::get('/obtenerdatapiezas', 'PiezaController@ObtenerData')->name('piezas.obtenerdata');
+    Route::resource('piezas', PiezaController::class);
+    Route::get('/obtenerdatapiezas', [PiezaController::class, 'ObtenerData'])->name('piezas.obtenerdata');
 
 });

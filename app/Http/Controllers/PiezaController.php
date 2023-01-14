@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Pieza;
-use Illuminate\Http\Request;
+use App\Models\Pieza;
+use App\Http\Requests\StorePiezaRequest;
+use App\Http\Requests\UpdatePiezaRequest;
+
 use Intervention\Image\Facades\Image as Image;
-use Yajra\Datatables\Datatables;
+use Yajra\DataTables\Services\DataTable;
 use Illuminate\Support\Facades\DB;
 
 class PiezaController extends Controller
@@ -23,15 +25,7 @@ class PiezaController extends Controller
 
     public function ObtenerData()
     {
-        $piezas = Pieza::select(['*']);
 
-        return Datatables::of($piezas)
-            ->addColumn('action', function ($pieza) {
-                return '<a class="btn btn-success btn-sm" href="'.route('piezas.edit',$pieza->id).'" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
-                <a class="btn btn-primary btn-sm" href="'.route('piezas.show',$pieza->id).'" data-toggle="tooltip" data-placement="top" title="Mostrar"><i class="fas fa-eye"></i></a>';
-            })
-            ->editColumn('id', '{{$id}}')
-            ->make(true);
     }
 
     /**
@@ -47,10 +41,10 @@ class PiezaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorePiezaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePiezaRequest $request)
     {
         $request->validate([
             'NPRO'=>'required',
@@ -65,7 +59,7 @@ class PiezaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pieza  $pieza
+     * @param  \App\Models\Pieza  $pieza
      * @return \Illuminate\Http\Response
      */
     public function show(Pieza $pieza)
@@ -76,7 +70,7 @@ class PiezaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pieza  $pieza
+     * @param  \App\Models\Pieza  $pieza
      * @return \Illuminate\Http\Response
      */
     public function edit(Pieza $pieza)
@@ -87,11 +81,11 @@ class PiezaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pieza  $pieza
+     * @param  \App\Http\Requests\UpdatePiezaRequest  $request
+     * @param  \App\Models\Pieza  $pieza
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pieza $pieza)
+    public function update(UpdatePiezaRequest $request, Pieza $pieza)
     {
         $request->validate([
             'NPRO'=>'required',
@@ -105,7 +99,7 @@ class PiezaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pieza  $pieza
+     * @param  \App\Models\Pieza  $pieza
      * @return \Illuminate\Http\Response
      */
     public function destroy(Pieza $pieza)
