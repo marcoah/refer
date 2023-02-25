@@ -15,6 +15,28 @@ return new class extends Migration
     {
         Schema::create('piezas', function (Blueprint $table) {
             $table->id();
+            $table->string('NPRO');
+            $table->string('DPRO');
+            $table->string('TVEH');
+            $table->string('ZDOC');
+            $table->string('CPRO');
+            $table->string('CORT');
+            $table->string('REEM');
+            $table->string('UBIC');
+            $table->integer('STOC');
+            $table->string('PCUR');
+            $table->string('PEND');
+            $table->string('DIFE');
+            $table->date('FUEN');
+            $table->date('FUSA');
+            $table->decimal('BPCL');
+            $table->decimal('PDUM');
+            $table->decimal('PDUA');
+            $table->decimal('BPNC');
+            $table->string('FAM1');
+            $table->string('FAMI');
+            $table->string('NPRV');
+            $table->string('CADU');
             $table->timestamps();
         });
     }
