@@ -21,7 +21,9 @@ class PiezasDataTable extends DataTable
     {
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', 'piezas.edit');
+            ->addColumn('action', function($row){
+                return '<a href="'.route('piezas.edit',$row->id).'" class="btn btn-success btn-xs">Editar</a>';
+            });
     }
 
     /**
