@@ -6,9 +6,9 @@
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h1 mb-0 text-gray-800">Agregar cliente</h1>
+            <h1 class="h1 mb-0 text-gray-800">Agregar pieza</h1>
             <div class="btn-group" role="group" aria-label="botones">
-                <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" href="{{ route('clientes.index') }}"><i class="fas fa-arrow-alt-circle-left fa-sm text-white-50"></i> Volver</a>
+                <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" href="{{ route('piezas.index') }}"><i class="fas fa-arrow-alt-circle-left fa-sm text-white-50"></i> Volver</a>
             </div>
         </div>
 
@@ -30,7 +30,7 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-sm-12 mb-4">
-                <form method="post" action="{{ route('clientes.store') }}">
+                <form method="post" action="{{ route('piezas.store') }}">
                     @csrf
 
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -224,7 +224,7 @@
                         <div class="col-lg-12 mb-4">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
-                                <a class="btn btn-danger btn-lg" href="{{ route('clientes.index') }}" role="button">Cancelar</a>
+                                <a class="btn btn-danger btn-lg" href="{{ route('piezas.index') }}" role="button">Cancelar</a>
                             </div>
                         </div>
                     </div>

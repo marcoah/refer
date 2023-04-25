@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\PiezasDataTable;
 use App\Models\Pieza;
 use App\Http\Requests\StorePiezaRequest;
 use App\Http\Requests\UpdatePiezaRequest;
@@ -13,9 +14,12 @@ class PiezaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PiezasDataTable $dataTable)
     {
-        return view('piezas.index');
+        //return view('piezas.index');
+
+        return $dataTable->render('piezas.index');
+
     }
 
     /**

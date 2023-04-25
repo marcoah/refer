@@ -68,6 +68,7 @@ table.dataTable thead > tr > td.sorting_asc_disabled:before,
 table.dataTable thead > tr > td.sorting_desc_disabled:before {
   bottom: 50%;
   content: "▲";
+  content: "▲"/"";
 }
 table.dataTable thead > tr > th.sorting:after, table.dataTable thead > tr > th.sorting_asc:after, table.dataTable thead > tr > th.sorting_desc:after, table.dataTable thead > tr > th.sorting_asc_disabled:after, table.dataTable thead > tr > th.sorting_desc_disabled:after,
 table.dataTable thead > tr > td.sorting:after,
@@ -77,6 +78,7 @@ table.dataTable thead > tr > td.sorting_asc_disabled:after,
 table.dataTable thead > tr > td.sorting_desc_disabled:after {
   top: 50%;
   content: "▼";
+  content: "▼"/"";
 }
 table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_desc:after,
 table.dataTable thead > tr > td.sorting_asc:before,
@@ -93,9 +95,9 @@ table.dataTable thead > tr > td:active {
   outline: none;
 }
 
-div.dataTables_scrollBody table.dataTable thead > tr > th:before, div.dataTables_scrollBody table.dataTable thead > tr > th:after,
-div.dataTables_scrollBody table.dataTable thead > tr > td:before,
-div.dataTables_scrollBody table.dataTable thead > tr > td:after {
+div.dataTables_scrollBody > table.dataTable > thead > tr > th:before, div.dataTables_scrollBody > table.dataTable > thead > tr > th:after,
+div.dataTables_scrollBody > table.dataTable > thead > tr > td:before,
+div.dataTables_scrollBody > table.dataTable > thead > tr > td:after {
   display: none;
 }
 
@@ -121,7 +123,8 @@ div.dataTables_processing > div:last-child > div {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: 2 117 216;
+  background: #0275d8;
+  background: rgb(var(--dt-row-selected));
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 div.dataTables_processing > div:last-child > div:nth-child(1) {
@@ -826,6 +829,414 @@ span.dt-button-spacer.bar:empty {
 div.dt-button-collection span.dt-button-spacer {
   padding-left: 1rem !important;
   text-align: left;
+}
+
+table.dataTable > tbody > tr > .selected {
+  background-color: rgba(2, 117, 216, 0.9);
+  color: white;
+}
+table.dataTable > tbody > tr > td.select-checkbox,
+table.dataTable > tbody > tr > th.select-checkbox {
+  position: relative;
+}
+table.dataTable > tbody > tr > td.select-checkbox:before, table.dataTable > tbody > tr > td.select-checkbox:after,
+table.dataTable > tbody > tr > th.select-checkbox:before,
+table.dataTable > tbody > tr > th.select-checkbox:after {
+  display: block;
+  position: absolute;
+  top: 1.2em;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+}
+table.dataTable > tbody > tr > td.select-checkbox:before,
+table.dataTable > tbody > tr > th.select-checkbox:before {
+  content: " ";
+  margin-top: -2px;
+  margin-left: -6px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+table.dataTable > tbody > tr.selected > td.select-checkbox:before,
+table.dataTable > tbody > tr.selected > th.select-checkbox:before {
+  border: 1px solid white;
+}
+table.dataTable > tbody > tr.selected > td.select-checkbox:after,
+table.dataTable > tbody > tr.selected > th.select-checkbox:after {
+  content: "✓";
+  font-size: 20px;
+  margin-top: -19px;
+  margin-left: -6px;
+  text-align: center;
+  text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+}
+table.dataTable.compact > tbody > tr > td.select-checkbox:before,
+table.dataTable.compact > tbody > tr > th.select-checkbox:before {
+  margin-top: -12px;
+}
+table.dataTable.compact > tbody > tr.selected > td.select-checkbox:after,
+table.dataTable.compact > tbody > tr.selected > th.select-checkbox:after {
+  margin-top: -16px;
+}
+
+div.dataTables_wrapper span.select-info,
+div.dataTables_wrapper span.select-item {
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 640px) {
+  div.dataTables_wrapper span.select-info,
+div.dataTables_wrapper span.select-item {
+    margin-left: 0;
+    display: block;
+  }
+}
+
+div.dtsp-topRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+  min-height: 37px;
+}
+div.dtsp-topRow input.dtsp-search {
+  text-overflow: ellipsis;
+  min-width: 50px;
+  flex-basis: 90px;
+  max-width: none;
+}
+div.dtsp-topRow input.dtsp-search::-moz-placeholder {
+  color: black;
+}
+div.dtsp-topRow input.dtsp-search::placeholder {
+  color: black;
+}
+div.dtsp-topRow div.dtsp-subRow1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+}
+div.dtsp-topRow div.dtsp-subRow1 div.dtsp-searchCont {
+  position: relative;
+  width: 100%;
+}
+div.dtsp-topRow div.dtsp-subRow1 div.dtsp-searchCont input.dtsp-disabledButton {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: transparent;
+}
+div.dtsp-topRow div.dtsp-subRow1 input {
+  padding-right: 2em;
+  width: 100% !important;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+div.dtsp-topRow div.dtsp-subRow1 button.dtsp-searchIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABbmlDQ1BpY2MAACiRdZE7SwNBFIU/EyWikRRaiFhsoWKhEBREO42FTZAQFYza7G5eQhKX3QQJtoKNhWAh2vgq/AfaCrYKgqAIIhb+Al+NhPVOEkiQZJbZ+3FmzmXmDHjCGTPrtAYhm8vb0bmQthxb0Xzv+PHRxRSabjrWTCQSpun4eaRF1YdR1av5voajM55wTGhpF54wLTsvPC0c3sxbineFe8y0Hhc+ER6x5YDCt0o3KvymOFXhL8X2YnQWPKqnlqpjo47NtJ0VHhYeyGYKZvU86ib+RG5pQWqfzH4coswRQsOgwDoZ8oxKzUlmjX3Bsm+eDfGY8rcoYosjRVq8I6IWpGtCalL0hHwZiir3/3k6yfGxSnd/CNpeXfdzEHz7UNpz3d9T1y2dgfcFrnM1/4bkNPkt+l5NGziGwDZc3tQ04wCudqD32dJtvSx5ZXqSSfi4gK4YdN9Dx2olq+o650+wuCVPdAeHRzAk+wNrfw8JaBFXEnV+AAAACXBIWXMAAA9hAAAPYQGoP6dpAAABMUlEQVQoU6XRr0vDQRjH8akoM4iIjqGoOIZ5oIjB5XWxajaYDGLSIhhNYjcPRDSJwbQNw+L+BNGgYYo/5pT5/shz8vDlBgMPXux7z3N3z+25VOofYyCyd4ZYCavI4gXPsRp9LqiDdrEMH+8wv8Vh8gBfWclFPOEUN3hAHjlMoRa7wTzBS5xgKLFglPkZLjDic6HyDsEMNvGR2Nxifoci3tEI+X770JU0XmPXIlax+LTPh83fFox1X6kxyzdjm9UcdXi9S+Vti6svfyNULhNR9TVsYNhW6Ff9KKCNR7/Zv6eeaQ+6+qcdpu9BqGlp1HFgud+FYdzzUcUExu0Q/cdzHGEFetIlXKPjK/sbqYoOftMiS+j9jzEJPd1Wt+5+kdR/9EM9ucIC5jCbyPc01Q32kfsBppYz3hYFcCwAAAAASUVORK5CYII=") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+div.dtsp-topRow div.dtsp-subRow2 {
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+div.dtsp-topRow button.dtsp-nameButton {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAABcGlDQ1BpY2MAACiRdZHNSwJBGMYftTDS8FCHkA57sOigIAXRMQzyYh3UIKvL7rirwe66zK6IdA26dBA6RF36OvQf1DXoWhAERRAR9B/0dQnZ3nEFJXSG2ffHs/O8zDwD+DM6M+yBJGCYDs+mU9JaYV0KviNMM4QoEjKzreXcUh59x88jfKI+JESv/vt6jlBRtRngGyKeYxZ3iBeIMzXHErxHPMbKcpH4hDjO6YDEt0JXPH4TXPL4SzDPZxcBv+gplbpY6WJW5gbxNHHM0KusfR5xk7BqruaoRmlNwEYWaaQgQUEVW9DhIEHVpMx6+5It3woq5GH0tVAHJ0cJZfLGSa1SV5WqRrpKU0dd5P4/T1ubnfG6h1PA4Kvrfk4CwX2g2XDd31PXbZ4BgRfg2uz4K5TT/DfpjY4WOwYiO8DlTUdTDoCrXWD82ZK53JICtPyaBnxcACMFYPQeGN7wsmr/x/kTkN+mJ7oDDo+AKdof2fwDCBRoDkL8UccAAAAJcEhZcwAAD2EAAA9hAag/p2kAAAK2SURBVFgJ7ZY9j41BFICvryCExrJBQ6HyEYVEIREaUZDQIRoR2ViJKCioxV+gkVXYTVZEQiEUhG2EQnxUCh0FKolY4ut5XnM2cyfva3Pt5m7EPcmzZ2bemTNnzjkzd1utnvQi0IvAfxiBy5z5FoxO89kPY+8mbMjtzs47RXs5/WVpbAG6bWExt5PuIibvhVkwmC+ck3eK9ln6/fAddFojYzBVuYSBpcnIEvRaqOw2RcaN18FPuJH0JvRUxbT3wWf4ltiKPgfVidWlbGZgPozDFfgAC+EA/K2EI4cwcAJ+gPaeQ+VQU2SOMMGcPgPl/m/V2p50rrbRsRgt9Iv5h6xtpP22Bz7Ce1C+gFFxfKzOmShcU+Qmyh2w3w8rIJfddHTck66EukL/xPhj+JM8rHNmFys0Pg4v0up3aFNlwR9NYyodd3OL/C64zpsymcTFcf6ElM4YzjAWKYrJkaq8kE/yUYNP4BoYvS1QRo+hNtF5xfkTUjoTheukSFFMjlTFm6PjceOca/SMpKfeCR1L6Uzk/y2WIkVhNFJlJAZhP+hYns7b9D3IPuhY5mYrIv8OrQJvR5NYyNaW4jsU8pSGNySiVx4o5tXq3JkoXE/mg5R/M8dGJCJpKhaDcjBRdbI/Rm8g69c122om33BHmj2CHoV5qa9jUXBraJ+G1fAVjIBO1klc87ro1K4JZ/K35SWW3TwcyDd6TecqnAEd8cGq2+w84xvBm1n3vS0izKkkwh5XNC/GmFPqqAtPF89AOScKuemaNzoTV1SD5dtSbmLf1/RV+tC0WTgcj6R7HEtrVGWaqu/lYDZ/2pvxQ/kIyw/gFByHC9AHw910hv1aUUumyd8yy0QfhmEkfiNod0Xusct68J1qc8Tdux0Z97Q+hsDb+AYGYEbF/4Guw2Q/qDPqZG/zXgT+3Qj8AtKnfWhFwmuAAAAAAElFTkSuQmCC") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 23px;
+  vertical-align: bottom;
+}
+div.dtsp-topRow button.dtsp-countButton {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABcGlDQ1BpY2MAACiRdZHNSwJBGMYftTDS8FCHkA57sOigIAXRMQzyYh3UIKvL7rirwe66zK6IdA26dBA6RF36OvQf1DXoWhAERRAR9B/0dQnZ3nEFJXSG2ffHs/O8zDwD+DM6M+yBJGCYDs+mU9JaYV0KviNMM4QoEjKzreXcUh59x88jfKI+JESv/vt6jlBRtRngGyKeYxZ3iBeIMzXHErxHPMbKcpH4hDjO6YDEt0JXPH4TXPL4SzDPZxcBv+gplbpY6WJW5gbxNHHM0KusfR5xk7BqruaoRmlNwEYWaaQgQUEVW9DhIEHVpMx6+5It3woq5GH0tVAHJ0cJZfLGSa1SV5WqRrpKU0dd5P4/T1ubnfG6h1PA4Kvrfk4CwX2g2XDd31PXbZ4BgRfg2uz4K5TT/DfpjY4WOwYiO8DlTUdTDoCrXWD82ZK53JICtPyaBnxcACMFYPQeGN7wsmr/x/kTkN+mJ7oDDo+AKdof2fwDCBRoDkL8UccAAAAJcEhZcwAAD2EAAA9hAag/p2kAAAG5SURBVEgN3VU9LwVBFF0fiYhofUSlEQkKhU7z/oBCQkIiGr9BgUbhVzy9BAnhFyjV/AYFiU5ICM7ZN+c5Zud5dm3lJmfmzrkz9+7cu3c3y/6jjOBSF8CxXS7FmTkbwqIJjDpJvTcmsJ4K3KPZUpyZsx0sxoB9J6mnAkyC7wGuuCFIipNtEcpcWExgXpOBc78vgj6N+QO4NVsjwdFM59tUIDxDrHMBOeIQ34C5ZDregXuAQm4YcI68nN9B3wr2PcwPAIPkN2EqtJH6b+QZm1ajjTx7BqwAr26Lb+C2Kvpbt0Mb2HAJ7NrGFGfmXO3DeA4UshDfQAVmH0gaUFg852TTTDvlxwBlCtxy9zXyBhQFaq0wMmIdRebrfgosA3zb2hKnqG0oqchp4QbuR8X0TjzABhbdOT8jnQ/atcgqpnfwOA7yqZyTU587ZkIGdesLTt2EkynOnbreMUUKMI/dA4B/QVOcO13CQh+5wWCgDwo/75u59odB/wjmfhbgvACcAOyZPHihMWAoIwxyCLgf1oxfgjzVbgBXSTzIN+f0pg6s5DkcesLMRpsBrgE2XO3CN64JFP7JtUeKHX4CKtRRXFZ+7dEAAAAASUVORK5CYII=") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+  vertical-align: bottom;
+}
+div.dtsp-topRow button.dtsp-collapseButton span.dtsp-caret {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+}
+div.dtsp-topRow button.dtsp-collapseButton.dtsp-rotated {
+  transform: rotate(180deg);
+}
+
+div.dtsp-topRow.dtsp-bordered {
+  border: 2px solid #f0f0f0;
+  border-radius: 3px;
+}
+
+div.dtsp-topRow.dtsp-bordered:hover {
+  background-color: #f0f0f0;
+  opacity: 0.6;
+  border: 2px solid #cfcfcf;
+  border-radius: 3px;
+  cursor: pointer !important;
+}
+
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane table thead th,
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane table thead td {
+  width: 100% !important;
+}
+
+div.dt-button-collection {
+  z-index: 2002;
+}
+
+div.dt-button-collection.dtb-collection-closeable div.dtsp-titleRow {
+  padding-right: 25px;
+}
+
+div.dtsp-columns-1 {
+  max-width: 100%;
+  min-width: 100%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-2 {
+  max-width: 49%;
+  min-width: 49%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-3 {
+  max-width: 32%;
+  min-width: 32%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-4 {
+  max-width: 24%;
+  min-width: 24%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-5 {
+  max-width: 19%;
+  min-width: 19%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-6 {
+  max-width: 16%;
+  min-width: 16%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-7 {
+  max-width: 14%;
+  min-width: 14%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-8 {
+  max-width: 12%;
+  min-width: 12%;
+  margin: 0px !important;
+}
+
+div.dtsp-columns-9 {
+  max-width: 10.5%;
+  min-width: 10.5%;
+  margin: 0px !important;
+}
+
+div.dtsp-narrow {
+  flex-direction: column !important;
+}
+div.dtsp-narrow div.dtsp-subRow1,
+div.dtsp-narrow div.dtsp-subRow2 {
+  width: 100%;
+}
+div.dtsp-narrow div.dtsp-subRow2 button {
+  margin: 0 !important;
+  width: 25% !important;
+}
+
+div.dt-button-collection {
+  float: none;
+}
+
+div.dtsp-panesContainer {
+  margin-bottom: 1em;
+}
+div.dtsp-panesContainer div.dataTables_wrapper {
+  width: 100%;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_layout_cell {
+  padding: 0;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollHead {
+  display: none !important;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
+  background: white !important;
+  border-bottom: none;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody thead {
+  display: none;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody table {
+  table-layout: fixed;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody table tr > th,
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody table tr > td {
+  padding: 5px 10px;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody td.dtsp-nameColumn {
+  width: 100% !important;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-name,
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-pill {
+  cursor: default;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  flex-grow: 1;
+  text-align: left;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-pill {
+  display: inline-block;
+  background-color: #cfcfcf;
+  text-align: center;
+  border: 1px solid #cfcfcf;
+  border-radius: 10px;
+  width: auto;
+  min-width: 30px;
+  color: black;
+  font-size: 0.9em;
+  padding: 0 4px;
+}
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody div.dtsp-nameCont span.dtsp-pill:empty {
+  display: none;
+}
+
+div.dtsp-panesContainer {
+  clear: both;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+div.dtsp-panesContainer div.dtsp-searchPanes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: stretch;
+  clear: both;
+  text-align: left;
+}
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane {
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: 0.9em;
+  margin-top: 15px !important;
+}
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper {
+  flex: 1;
+  box-sizing: border-box;
+}
+div.dtsp-panesContainer div.dtsp-searchPanes div.dtsp-searchPane div.dataTables_wrapper div.dataTables_filter {
+  display: none;
+}
+div.dtsp-panesContainer div.dtsp-title {
+  float: left;
+  padding: 10px 0;
+}
+div.dtsp-panesContainer button.dtsp-clearAll,
+div.dtsp-panesContainer button.dtsp-collapseAll,
+div.dtsp-panesContainer button.dtsp-showAll {
+  float: right;
+  padding: 10px;
+}
+
+div.dtsp-hidden {
+  display: none !important;
+}
+
+div.dtsp-panesContainer button.dtsp-clearAll,
+div.dtsp-panesContainer button.dtsp-showAll {
+  margin-left: 3px;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow {
+  margin: 0.5em 0;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow input.form-control {
+  border-radius: 4px;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow div.dtsp-subRow2 {
+  margin-left: 0.5em;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow button {
+  border: 1px solid #ced4da;
+  width: 35px;
+  line-height: 20px;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow div.dtsp-subRow1 button {
+  border-right: none;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow span.dtsp-caret {
+  top: 4px;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow button.dtsp-rotated {
+  transform: none;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow button.dtsp-rotated span {
+  transform: rotate(180deg);
+  top: -4px;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow.dtsp-bordered:hover button.disabled {
+  cursor: pointer !important;
+  pointer-events: none;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dtsp-topRow.dtsp-bordered:hover input.dtsp-paneInputButton {
+  pointer-events: none;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dataTables_wrapper {
+  border: 2px #f0f0f0 solid;
+  border-radius: 4px;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dataTables_wrapper:hover {
+  border: 2px solid #cfcfcf !important;
+}
+div.dtsp-panesContainer div.dtsp-searchPane div.dataTables_wrapper div.dtsp-nameCont span.badge {
+  min-width: 30px;
+  line-height: 1.25em;
+  margin-top: 3.5px;
+}
+div.dtsp-panesContainer button.disabled {
+  cursor: not-allowed;
+}
+
+div.dt-button-collection div.dtsp-panesContainer {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @charset "UTF-8";
@@ -6500,8 +6911,7 @@ a.close.disabled {
   float: left;
   width: 100%;
   margin-right: -100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10072,7 +10482,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*!
- * Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2023 Fonticons, Inc.
  */
@@ -18301,7 +18711,7 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2023 Fonticons, Inc.
  */
@@ -18315,7 +18725,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?bdb9e23299f9d1320a8be0879fc918d1) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?2877d54f94f30c5d563c5164dc56be39) format("truetype");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?bb975c966c37455a1bc3c7e29971386c) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?4a2cd718d7031b732e7610fba99ecf74) format("truetype");
 }
 .fas,
 .fa-solid {
@@ -18323,7 +18733,7 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2023 Fonticons, Inc.
  */
@@ -18337,7 +18747,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?7be2266f1be21c44ecd4438c55d55320) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?13e40630e5866f777de89153e8a93bdf) format("truetype");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?e033a13ee751afc1860c3bc31ede1065) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?150de8eaa454d669c405d810c8dbbf14) format("truetype");
 }
 .fab,
 .fa-brands {
@@ -20349,7 +20759,7 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2023 Fonticons, Inc.
  */
@@ -20363,7 +20773,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?8bedd7cfa43a6c358cddcbf965bb5a0c) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?146404900f7550a9719df3c206f9b38c) format("truetype");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?3223dc79c1adee56370b19dca985aa17) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?d87474231f419288480274125e0e9767) format("truetype");
 }
 .far,
 .fa-regular {
@@ -21415,67 +21825,67 @@ form.user .btn-user {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(37px, 9999px, 28px, 0);
+    clip: rect(63px, 9999px, 13px, 0);
   }
   5% {
-    clip: rect(88px, 9999px, 84px, 0);
+    clip: rect(74px, 9999px, 24px, 0);
   }
   10% {
-    clip: rect(73px, 9999px, 55px, 0);
+    clip: rect(80px, 9999px, 40px, 0);
   }
   15% {
-    clip: rect(65px, 9999px, 82px, 0);
+    clip: rect(55px, 9999px, 68px, 0);
   }
   20% {
-    clip: rect(99px, 9999px, 23px, 0);
+    clip: rect(23px, 9999px, 31px, 0);
   }
   25% {
-    clip: rect(7px, 9999px, 11px, 0);
+    clip: rect(33px, 9999px, 96px, 0);
   }
   30% {
-    clip: rect(54px, 9999px, 76px, 0);
+    clip: rect(36px, 9999px, 65px, 0);
   }
   35% {
-    clip: rect(6px, 9999px, 30px, 0);
+    clip: rect(12px, 9999px, 14px, 0);
   }
   40% {
-    clip: rect(76px, 9999px, 91px, 0);
+    clip: rect(57px, 9999px, 86px, 0);
   }
   45% {
-    clip: rect(36px, 9999px, 100px, 0);
+    clip: rect(63px, 9999px, 80px, 0);
   }
   50% {
-    clip: rect(77px, 9999px, 26px, 0);
+    clip: rect(82px, 9999px, 40px, 0);
   }
   55% {
-    clip: rect(90px, 9999px, 7px, 0);
+    clip: rect(50px, 9999px, 67px, 0);
   }
   60% {
-    clip: rect(20px, 9999px, 57px, 0);
+    clip: rect(89px, 9999px, 52px, 0);
   }
   65% {
-    clip: rect(21px, 9999px, 82px, 0);
+    clip: rect(85px, 9999px, 1px, 0);
   }
   70% {
-    clip: rect(76px, 9999px, 4px, 0);
+    clip: rect(81px, 9999px, 63px, 0);
   }
   75% {
-    clip: rect(49px, 9999px, 58px, 0);
+    clip: rect(2px, 9999px, 47px, 0);
   }
   80% {
-    clip: rect(22px, 9999px, 88px, 0);
+    clip: rect(61px, 9999px, 61px, 0);
   }
   85% {
-    clip: rect(65px, 9999px, 83px, 0);
+    clip: rect(71px, 9999px, 69px, 0);
   }
   90% {
-    clip: rect(20px, 9999px, 74px, 0);
+    clip: rect(56px, 9999px, 72px, 0);
   }
   95% {
-    clip: rect(86px, 9999px, 54px, 0);
+    clip: rect(35px, 9999px, 65px, 0);
   }
   100% {
-    clip: rect(100px, 9999px, 97px, 0);
+    clip: rect(51px, 9999px, 1px, 0);
   }
 }
 .error:after {
@@ -21493,67 +21903,67 @@ form.user .btn-user {
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(99px, 9999px, 58px, 0);
+    clip: rect(13px, 9999px, 82px, 0);
   }
   5% {
-    clip: rect(88px, 9999px, 30px, 0);
+    clip: rect(73px, 9999px, 1px, 0);
   }
   10% {
-    clip: rect(18px, 9999px, 59px, 0);
+    clip: rect(83px, 9999px, 10px, 0);
   }
   15% {
-    clip: rect(59px, 9999px, 48px, 0);
+    clip: rect(96px, 9999px, 92px, 0);
   }
   20% {
-    clip: rect(20px, 9999px, 82px, 0);
+    clip: rect(66px, 9999px, 49px, 0);
   }
   25% {
-    clip: rect(12px, 9999px, 87px, 0);
+    clip: rect(19px, 9999px, 77px, 0);
   }
   30% {
-    clip: rect(19px, 9999px, 47px, 0);
+    clip: rect(17px, 9999px, 88px, 0);
   }
   35% {
-    clip: rect(81px, 9999px, 69px, 0);
+    clip: rect(65px, 9999px, 25px, 0);
   }
   40% {
-    clip: rect(36px, 9999px, 4px, 0);
+    clip: rect(100px, 9999px, 89px, 0);
   }
   45% {
-    clip: rect(45px, 9999px, 75px, 0);
+    clip: rect(31px, 9999px, 65px, 0);
   }
   50% {
-    clip: rect(25px, 9999px, 15px, 0);
+    clip: rect(78px, 9999px, 90px, 0);
   }
   55% {
-    clip: rect(80px, 9999px, 9px, 0);
+    clip: rect(8px, 9999px, 17px, 0);
   }
   60% {
-    clip: rect(94px, 9999px, 24px, 0);
+    clip: rect(4px, 9999px, 4px, 0);
   }
   65% {
-    clip: rect(99px, 9999px, 23px, 0);
+    clip: rect(20px, 9999px, 36px, 0);
   }
   70% {
-    clip: rect(7px, 9999px, 27px, 0);
+    clip: rect(30px, 9999px, 47px, 0);
   }
   75% {
-    clip: rect(18px, 9999px, 17px, 0);
+    clip: rect(88px, 9999px, 59px, 0);
   }
   80% {
-    clip: rect(33px, 9999px, 41px, 0);
+    clip: rect(91px, 9999px, 28px, 0);
   }
   85% {
-    clip: rect(33px, 9999px, 39px, 0);
+    clip: rect(71px, 9999px, 51px, 0);
   }
   90% {
-    clip: rect(6px, 9999px, 10px, 0);
+    clip: rect(92px, 9999px, 52px, 0);
   }
   95% {
-    clip: rect(47px, 9999px, 74px, 0);
+    clip: rect(44px, 9999px, 2px, 0);
   }
   100% {
-    clip: rect(52px, 9999px, 99px, 0);
+    clip: rect(55px, 9999px, 63px, 0);
   }
 }
 .error:before {

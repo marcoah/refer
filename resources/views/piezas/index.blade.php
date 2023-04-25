@@ -27,44 +27,23 @@
         </div>
     </div>
 
+    {{$dataTable->table()}}
+
+    <!--
     <div class="table-responsive-sm">
-        <table class="table table-striped" id="piezas-table" style="width=100%">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>NPRO</th>
-                    <th>DPRO</th>
-                    <th>STOC</th>
-                    <th>UBIC</th>
-                    <th>BPNC</th>
-                    <th></th>
-                </tr>
-            </thead>
+        <table class="table table-striped table-bordered table-hover dt-responsive nowrap" id="piezas-table" style="width:100%">
+
         </table>
     </div>
+-->
 </div>
 @endsection
 
 @push('scripts')
 <!-- DataTables -->
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
 
-<script>
-$(function() {
-    $('#piezas-table').DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: '{!! route('piezas.obtenerdata') !!}',
-        columns: [
-            { data: 'id', name: 'id' },
-            { data: 'NPRO', name: 'NPRO' },
-            { data: 'DPRO', name: 'DPRO' },
-            { data: 'STOC', name: 'STOC' },
-            { data: 'UBIC', name: 'UBIC' },
-            { data: 'BPNC', name: 'BPNC' },
-            { data: 'action', name: 'action', orderable: false, searchable: false }
-        ]
-    });
-});
-</script>
+{{$dataTable->scripts()}}
+
 @endpush
