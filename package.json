@@ -6,11 +6,30 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@fortawesome/fontawesome-free": "^6.5.2",
         "@popperjs/core": "^2.11.6",
         "axios": "^1.6.4",
         "bootstrap": "^5.2.3",
+        "chart.js": "^4.4.2",
+        "jquery": "^3.7.1",
+        "laravel-datatables-vite": "^0.5.2",
         "laravel-vite-plugin": "^1.0.0",
         "sass": "^1.56.1",
         "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "@selectize/selectize": "^0.15.2",
+        "@vitejs/plugin-vue": "^5.0.4",
+        "bootstrap-icons": "^1.11.3",
+        "datatables.net-bs5": "^2.0.3",
+        "datatables.net-buttons-bs5": "^3.0.1",
+        "datatables.net-responsive-bs5": "^3.0.1",
+        "datatables.net-select-bs5": "^2.0.1",
+        "daterangepicker": "^3.1.0",
+        "jszip": "^3.10.1",
+        "pdfmake": "^0.2.10",
+        "select2": "^4.1.0-rc.0",
+        "select2-bootstrap-5-theme": "^1.3.0",
+        "vue": "^3.4.21"
     }
 }

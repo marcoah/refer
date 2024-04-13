@@ -7,7 +7,6 @@ La base de datos original es de un dbf muy viejo con el listado de piezas de Ren
 La idea es simplemente ir probando técnicas para consulta a una base de datos con PHP y mostrar la información con HTML + CSS muy basico.
 
 ## Instrucciones rapidas
-
 * Hacer el Fork del repositorio 
 * Clonar el repositorio en su disco local
 * Crear BD EL archivo refer.sql que se encuentra en la carpeta data contiene la BD
