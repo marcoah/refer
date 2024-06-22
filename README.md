@@ -16,8 +16,8 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 ## Requisitos
 * PHP +8.0
 * MySQL +8.0
-* Laravel 8.0
-* Frontend: UI/Bootstrap 4.6
+* Laravel 10.0
+* Frontend: UI/Bootstrap 5.3
 
 
 ## Software recomendado
