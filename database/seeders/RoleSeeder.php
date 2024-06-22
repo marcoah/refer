@@ -26,7 +26,7 @@ class RoleSeeder extends Seeder
         $roleSuper = Role::create(['name' => 'super-admin']); // gets all permissions via Gate::before rule; see AuthServiceProvider
 
         //definir las acciones en funcion a los requisitos del sistema
-        $permission1 = Permission::create(['name' => 'ver-administracion']);
+
         $permission2 = Permission::create(['name' => 'ver-reportes']);
         $permission3 = Permission::create(['name' => 'ver-maestros']);
         $permission4 = Permission::create(['name' => 'ver-mensajeria']);
@@ -35,26 +35,16 @@ class RoleSeeder extends Seeder
         $permission7 = Permission::create(['name' => 'ver-usuarios']);
         $permission8 = Permission::create(['name' => 'ver-roles']);
 
-        $permission1C = Permission::create(['name' => 'crear-cliente']);
-        $permission1R = Permission::create(['name' => 'ver-cliente']);
-        $permission1U = Permission::create(['name' => 'editar-cliente']);
-        $permission1D = Permission::create(['name' => 'eliminar-cliente']);
+        $permission1a = Permission::create(['name' => 'pieza-ver']);
+        $permission1b = Permission::create(['name' => 'pieza-create']);
+        $permission1c = Permission::create(['name' => 'pieza-index']);
+        $permission1d = Permission::create(['name' => 'pieza-editar']);
+        $permission1e = Permission::create(['name' => 'pieza-eliminar']);
 
-        $permission2C = Permission::create(['name' => 'crear-proveedor']);
-        $permission2R = Permission::create(['name' => 'ver-proveedor']);
-        $permission2U = Permission::create(['name' => 'editar-proveedor']);
-        $permission2D = Permission::create(['name' => 'eliminar-proveedor']);
-
-        $permission3C = Permission::create(['name' => 'crear-productos']);
-        $permission3R = Permission::create(['name' => 'ver-productos']);
-        $permission3U = Permission::create(['name' => 'editar-productos']);
-        $permission3D = Permission::create(['name' => 'eliminar-productos']);
 
         $roleAdmin->givePermissionTo(
-            $permission1, $permission2, $permission3, $permission4, $permission5, $permission6, $permission7, $permission8,
-            $permission1C, $permission1R, $permission1U, $permission1D,
-            $permission2C, $permission2R, $permission2U, $permission2D,
-            $permission3C, $permission3R, $permission3U, $permission3D,
+            $permission2, $permission3, $permission4, $permission5, $permission6, $permission7, $permission8,
+            $permission1a, $permission1b, $permission1c, $permission1d, $permission1e,
         );
         $roleCliente->givePermissionTo(
             $permission4, $permission5, $permission6

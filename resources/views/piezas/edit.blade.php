@@ -17,8 +17,23 @@
 </div><!-- End Page Title -->
 
 <section class="section">
-    <div class="row">
 
+    <!-- Alerts Row -->
+    <div class="row">
+        <div class="col-sm-12 mb-4">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
+    </div>
+
+    <div class="row">
         <form method="post" action="{{ route('piezas.update', $pieza->id) }}">
             @method('PATCH')
             @csrf
@@ -210,7 +225,6 @@
                 </div>
             </div>
         </form>
-
     </div>
 </section>
 

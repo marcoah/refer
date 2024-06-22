@@ -17,6 +17,17 @@
     </div><!-- End Page Title -->
 
     <section class="section">
+
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                @if(session()->get('success'))
+                    <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
