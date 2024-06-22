@@ -21,6 +21,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'username', 'firstname', 'lastname',
+        'profile_id',
         'email',
         'password',
     ];
@@ -44,4 +45,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getfullname()
+    {
+        $fullname = $this->firstname . ' ' . $this->lastname;
+        return $fullname;
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class, 'id', 'profile_id');
+    }
+
 }

@@ -18,6 +18,21 @@
 
 <section class="section">
     <div class="row">
+        <form method="post" action="{{ route('piezas.store') }}">
+            @csrf
+
+
+
+            <!-- Fila Botones -->
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                        <a class="btn btn-danger btn-lg" href="{{ route('piezas.index') }}" role="button">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
 
