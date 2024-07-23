@@ -39,7 +39,6 @@
             @csrf
 
 
-
             <!-- Fila Botones -->
             <div class="row">
                 <div class="col-lg-12 mb-4">

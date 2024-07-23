@@ -290,9 +290,9 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="{{ route('home') }}">
                     <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+                    <span>Escritorio</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
@@ -303,23 +303,23 @@
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="{{ route('piezas.index') }}">
-                            <i class="bi bi-circle"></i><span>Index</span>
+                            <i class="bi bi-circle"></i><span>Lista</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('piezas.create') }}">
-                            <i class="bi bi-circle"></i><span>Accordion</span>
+                            <i class="bi bi-circle"></i><span>Agregar</span>
                         </a>
                     </li>
                 </ul>
             </li><!-- End Components Nav -->
 
-            <li class="nav-heading">Pages</li>
+            <li class="nav-heading">Configuración</li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('profile') }}">
                     <i class="bi bi-person"></i>
-                    <span>Profile</span>
+                    <span>Perfil</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
@@ -335,7 +335,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>M.H. Consultores C.A.</span></strong>. All Rights Reserved
         </div>
     </footer><!-- End Footer -->
 
