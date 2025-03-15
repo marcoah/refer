@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth'], function	() {
 
-Auth::routes();
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+	Route::get('profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+	Route::get('settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+	Route::resource('piezas', App\Http\Controllers\PiezaController::class);
+
+    //Roles
+    Route::resource('roles', App\Http\Controllers\RoleController::class);
+
+    //Users
+    Route::resource('users', App\Http\Controllers\UserController::class);
+
+});

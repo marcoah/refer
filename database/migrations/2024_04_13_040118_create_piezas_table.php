@@ -13,6 +13,28 @@ return new class extends Migration
     {
         Schema::create('piezas', function (Blueprint $table) {
             $table->id();
+            $table->string('NPRO');
+            $table->string('DPRO');
+            $table->string('TVEH')->nullable();
+            $table->string('ZDOC')->nullable();
+            $table->string('CPRO')->nullable();
+            $table->string('CORT')->nullable();
+            $table->string('REEM')->nullable();
+            $table->string('UBIC')->nullable();
+            $table->integer('STOC')->default(0);
+            $table->string('PCUR')->nullable();
+            $table->string('PEND')->nullable();
+            $table->string('DIFE')->nullable();
+            $table->date('FUEN')->nullable();
+            $table->date('FUSA')->nullable();
+            $table->double('BPCL',18,2)->default(0);
+            $table->double('PDUM',18,2)->default(0);
+            $table->double('PDUA',18,2)->default(0);
+            $table->double('BPNC',18,2)->default(0);
+            $table->string('FAM1')->nullable();
+            $table->string('FAMI')->nullable();
+            $table->string('NPRV')->nullable();
+            $table->string('CADU')->nullable();
             $table->timestamps();
         });
     }

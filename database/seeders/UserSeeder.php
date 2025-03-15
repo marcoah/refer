@@ -19,18 +19,10 @@ class UserSeeder extends Seeder
         $user->username = 'marcoah';
         $user->firstname = 'Marco';
         $user->lastname = 'Hernandez';
+        $user->profile_id = 1;
         $user->password = Hash::make('marcoa1*');
         $user->email = 'marcoah@gmail.com';
         $user->save();
         $user->assignRole('super-admin');
-
-        $user = new User();
-        $user->username = 'cliente';
-        $user->firstname = 'Cliente';
-        $user->lastname = 'Prueba';
-        $user->password = Hash::make('cliente1*');
-        $user->email = 'cliente@example.com';
-        $user->save();
-        $user->assignRole('Cliente');
     }
 }
