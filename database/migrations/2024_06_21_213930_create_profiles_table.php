@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->string('profile_image')->nullable();
             $table->text('profile_about')->nullable();
             $table->string('profile_company')->nullable();
             $table->string('profile_job')->nullable();
@@ -31,7 +30,6 @@ return new class extends Migration
             $table->string('profile_linkedin')->nullable();
             $table->date('profile_birthday')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('empresa_id')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

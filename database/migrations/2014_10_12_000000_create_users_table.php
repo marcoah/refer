@@ -16,10 +16,13 @@ return new class extends Migration
             $table->string('username');
             $table->string('firstname');
             $table->string('lastname');
-            $table->unsignedBigInteger('profile_id')->nullable();
+            $table->string('avatar')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->dateTime('last_login_at')->nullable();
+            $table->string('last_login_ip_address')->nullable();
+            $table->string('status')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
