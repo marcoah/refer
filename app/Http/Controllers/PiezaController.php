@@ -13,6 +13,7 @@ class PiezaController extends Controller
     public function index()
     {
         //
+        return view('piezas.index');
     }
 
     /**
@@ -21,6 +22,7 @@ class PiezaController extends Controller
     public function create()
     {
         //
+        return view('piezas.create');
     }
 
     /**
@@ -29,6 +31,14 @@ class PiezaController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'NPRO' => 'required',
+            'DPRO' => 'required'
+        ]);
+
+        Pieza::create($request->all());
+
+        return redirect()->route('piezas.index')->with('success', 'pieza creado con éxito.');
     }
 
     /**
@@ -37,6 +47,7 @@ class PiezaController extends Controller
     public function show(Pieza $pieza)
     {
         //
+        return view('piezas.show', compact('pieza'));
     }
 
     /**
@@ -45,6 +56,7 @@ class PiezaController extends Controller
     public function edit(Pieza $pieza)
     {
         //
+        return view('piezas.edit', compact('pieza'));
     }
 
     /**
@@ -53,6 +65,13 @@ class PiezaController extends Controller
     public function update(Request $request, Pieza $pieza)
     {
         //
+        $request->validate([
+            'NPRO' => 'required',
+            'DPRO' => 'required'
+        ]);
+
+        $pieza->update($request->all());
+        return redirect()->route('piezas.index')->with('success', 'pieza actualizado correctamente.');
     }
 
     /**
@@ -61,5 +80,7 @@ class PiezaController extends Controller
     public function destroy(Pieza $pieza)
     {
         //
+        $pieza->delete();
+        return redirect()->route('piezas.index')->with('success', 'pieza eliminado correctamente.');
     }
 }
