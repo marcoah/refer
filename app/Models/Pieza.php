@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pieza extends Model
 {
-    //protected $table = "refer1";
     protected $guarded = [];
 
     protected $casts = [

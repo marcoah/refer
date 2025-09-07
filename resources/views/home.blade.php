@@ -1,23 +1,28 @@
-@extends('layouts.app')
+@extends('layouts.escritorio')
+
+@section('styles')
+
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </nav>
+</div><!-- End Page Title -->
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+<section class="section dashboard">
+    <div class="row">
     </div>
-</div>
+</section>
+
 @endsection
+
+@push('scripts')
+
+@endpush
