@@ -25,6 +25,10 @@ La idea es simplemente ir probando técnicas para consulta a una base de datos c
 - MySQL Workbench
 - Visual Studio Code
 
+## Tareas por realizar en el proyecto
+
+Para ver las tareas pendientes por realizar: [Por hacer](por_completar.md)
+
 ## Contribuir en este repo
 
 Por favor leer [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
