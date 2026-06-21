@@ -1,4 +1,4 @@
-Tareas por realizar migracion desde Blade Bootstrap
+# Tareas por realizar
 
-Pasar las vistas de blade a vue
-Pasar plantilla de bootstrap a vue (o migrar a tailwind)
+- Generar ejemplos de ventas (1 item por cliente)
+- Generar ejemplos de ventas (Multiples item por cliente)

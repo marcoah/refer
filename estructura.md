@@ -6,6 +6,7 @@ Estructura de tablas
 
 | Nombre campo |  Tipo Campo   | Atributos | Descripcion |
 | :----------- | :-----------: | :-------- | :---------- |
+| id           |      ID       |           |             |
 | NPRO         |    string     |           |             |
 | DPRO         |    string     |           |             |
 | TVEH         |    string     |           |             |
@@ -31,37 +32,31 @@ Estructura de tablas
 
 ## Cliente
 
-| Nombre campo      | Tipo Campo | Atributos | Descripcion |
-| :---------------- | :--------: | :-------- | :---------- |
-| nombre            |   string   |           |             |
-| codigo_tributario |   string   | nullable  |             |
-| tipo              |   string   | nullable  |             |
-| celular           |   string   | nullable  |             |
-| telefono1         |   string   | nullable  |             |
-| telefono2         |   string   | nullable  |             |
-| contacto          |   string   | nullable  |             |
-| email1            |   string   | nullable  |             |
-| email2            |   string   | nullable  |             |
-| direccion1        |    text    | nullable  |             |
-| ciudad1           |   string   | nullable  |             |
-| estado1           |   string   | nullable  |             |
-| postalcode1       |   string   | nullable  |             |
-| pais1             |   string   | nullable  |             |
-| direccion2        |    text    | nullable  |             |
-| ciudad2           |   string   | nullable  |             |
-| estado2           |   string   | nullable  |             |
-| postalcode2       |   string   | nullable  |             |
-| pais2             |   string   | nullable  |             |
-| actividad         |    text    | nullable  |             |
-| observaciones     |    text    | nullable  |             |
-| status            |   string   | nullable  |             |
+| Nombre campo | Tipo Campo | Atributos | Descripcion |
+| :----------- | :--------: | :-------- | :---------- |
+| id           |     ID     |           |             |
+| nombre       |   string   |           |             |
+| codigo       |   string   | nullable  |             |
+| tipo         |   string   | nullable  |             |
+| celular      |   string   | nullable  |             |
+| telefono     |   string   | nullable  |             |
+| contacto     |   string   | nullable  |             |
+| email        |   string   | nullable  |             |
+| direccion    |    text    | nullable  |             |
+| ciudad       |   string   | nullable  |             |
+| estado       |   string   | nullable  |             |
+| postalcode   |   string   | nullable  |             |
+| pais         |   string   | nullable  |             |
+| status       |   string   | nullable  |             |
 
 ## Categoria
 
 | Nombre campo | Tipo Campo | Atributos | Descripcion |
 | :----------- | :--------: | :-------- | :---------- |
+| id           |     ID     |           |             |
 | nombre       |   string   |           |             |
-| codigo       |   string   |           |             |
+| parent_id    |   string   |           |             |
+| CPRO         |   string   |           |             |
 | descripcion  |    text    | nullable  |             |
 
 ## Orden y detalle
